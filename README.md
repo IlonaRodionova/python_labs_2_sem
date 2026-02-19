@@ -1,0 +1,2 @@
+# python_labs_2_sem
+ООП
