@@ -82,7 +82,7 @@ class Product:
         validate_category(category)
         self._category = category
 
-    # ===== Business Logic =====
+    # ===== business logic =====
     def get_final_price(self) -> float:
         """ возвращает цену с учетом скидки """
         if not self._active:
@@ -115,7 +115,7 @@ class Product:
         """ Товар снят с продажи """
         self._active = False
 
-    # ===== Magic =====
+    # ===== magic =====
     def __str__(self) -> str:
         """ строковое представление товара """
         return f"{self._name} - {self._price} {self.currency} ({self._stock} шт.)"
