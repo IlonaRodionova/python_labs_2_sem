@@ -67,19 +67,7 @@ def main() -> None:
     p2.reduce_stock(2)
     print(f"Остаток на складе: {p2.stock}")
     
-    # Проверяем, можно ли купить еще или узнать цену
-    print(" Попытка узнать цену закрытого товара:")
-    try:
-        p2.get_final_price()
-    except ValueError as e:
-        print(f"   Успех! Система отказала: {e}")
-
-    print(" Попытка купить товар, которого нет:")
-    try:
-        p2.reduce_stock(1)
-    except ValueError as e:
-        print(f"   Успех! Система отказала: {e}")
-
+   
     print("\n6. Атрибут класса (Валюта)")
     print(f"Текущий вывод: {p1}")
     print("Меняем валюту магазина на доллары ($)")
