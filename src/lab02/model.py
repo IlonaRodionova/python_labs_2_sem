@@ -1,4 +1,4 @@
-from validate import (
+from lib.validate import (
     validate_name,
     validate_price,
     validate_discount,
