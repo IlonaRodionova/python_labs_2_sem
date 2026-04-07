@@ -6,6 +6,12 @@ class ProductCatalog:
     def __init__(self):
         self._items = []
     
+    def find_by_id(self, product_id):
+        for item in self._items:
+            if item.product_id == product_id:
+                return item
+        return None
+
     def add(self, item):
         if not isinstance(item, Product):
             raise TypeError(f"Можно добавлять только объекты Product, получен {type(item).__name__}")
@@ -27,12 +33,6 @@ class ProductCatalog:
     
     def get_all(self):
         return self._items.copy()
-    
-    def find_by_id(self, product_id):
-        for item in self._items:
-            if item.product_id == product_id:
-                return item
-        return None
     
     def find_by_name(self, name):
         name_lower = name.lower()
