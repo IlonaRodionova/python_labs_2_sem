@@ -201,7 +201,7 @@ def main():
         try:
             lancome.get_final_price()
         except ValueError as e:
-            print(f"    Ошибка: {e}")
+            print(f"Ошибка: {e}")
     
     print("\nСтатистика каталога:")
     print(f"  • Всего товаров: {len(catalog)}")
