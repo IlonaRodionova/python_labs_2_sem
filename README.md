@@ -12,3 +12,7 @@
 > ## Лабораторная номер 3
 
 - [README](src/lab03/README.md) 
+
+> ## Лабораторная номер 4
+
+- [README](src/lab04/README.md) 
