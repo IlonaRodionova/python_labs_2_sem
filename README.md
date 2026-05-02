@@ -16,3 +16,7 @@
 > ## Лабораторная номер 4
 
 - [README](src/lab04/README.md) 
+
+> ## Лабораторная номер 5
+
+- [README](src/lab05/README.md) 
