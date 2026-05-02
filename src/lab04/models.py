@@ -3,7 +3,6 @@ from lab04.interfaces import PriceCalculable, Displayable, Discountable
 
 
 class Perfume(Product, PriceCalculable, Displayable, Discountable):
-    """Парфюм - реализует все интерфейсы"""
     
     def __init__(self, name, price, stock, discount, category, product_id, volume, fragrance_type):
         super().__init__(name, price, stock, discount, category, product_id)
@@ -46,7 +45,6 @@ class Perfume(Product, PriceCalculable, Displayable, Discountable):
 
 
 class Skincare(Product, PriceCalculable, Displayable):
-    """Уход за кожей - реализует PriceCalculable и Displayable"""
     
     def __init__(self, name, price, stock, discount, category, product_id, skin_type, active_ingredient):
         super().__init__(name, price, stock, discount, category, product_id)
@@ -86,7 +84,6 @@ class Skincare(Product, PriceCalculable, Displayable):
 
 
 class Makeup(Product, PriceCalculable, Displayable):
-    """Макияж - реализует PriceCalculable и Displayable"""
     
     def __init__(self, name, price, stock, discount, category, product_id, shade, texture):
         super().__init__(name, price, stock, discount, category, product_id)
