@@ -10,33 +10,33 @@
 
 ### Generic класс TypedCollection
 
-Класс-контейнер, который может хранить элементы любого одного типа. Тип указывается при создании.
+**Generic класс TypedCollection**
 
-| Метод | Что делает | Аннотация |
-|-------|-----------|-----------|
-| `add(item)` | Добавляет элемент | `def add(self, item: T) -> None` |
-| `remove(item)` | Удаляет элемент | `def remove(self, item: T) -> None` |
-| `remove_at(index)` | Удаляет по индексу | `def remove_at(self, index: int) -> T` |
-| `get_all()` | Возвращает копию списка | `def get_all(self) -> list[T]` |
-| `find(predicate)` | Ищет первый подходящий | `def find(self, predicate: Callable[[T], bool]) -> Optional[T]` |
-| `filter(predicate)` | Возвращает список подходящих | `def filter(self, predicate: Callable[[T], bool]) -> list[T]` |
-| `map(transform)` | Преобразует элементы | `def map(self, transform: Callable[[T], R]) -> list[R]` |
+Это обобщённая коллекция, которая хранит элементы одного типа. Тип указывается при создании: `TypedCollection[Product]` или `TypedCollection[Perfume]`.
 
-### TypeVar и их ограничения
+Основные методы с аннотациями типов:
 
-| TypeVar | Ограничение | Назначение |
-|---------|-------------|------------|
-| `T` | нет | Базовый тип для обычной generic коллекции |
-| `D` | `bound=Displayable` | Только объекты с методом `display()` |
-| `S` | `bound=Scorable` | Только объекты с методом `score()` |
-| `R` | нет | Для результатов map (может быть другим типом) |
+- `add(self, item: T) -> None` — добавляет элемент
+- `remove(self, item: T) -> None` — удаляет элемент
+- `remove_at(self, index: int) -> T` — удаляет по индексу и возвращает элемент
+- `get_all(self) -> list[T]` — возвращает копию списка
+- `find(self, predicate: Callable[[T], bool]) -> Optional[T]` — ищет первый подходящий элемент
+- `filter(self, predicate: Callable[[T], bool]) -> list[T]` — возвращает список подходящих элементов
+- `map(self, transform: Callable[[T], R]) -> list[R]` — применяет функцию к элементам, возвращает список другого типа
 
-### Protocol (структурная типизация)
+**TypeVar**
 
-| Protocol | Требуемый метод | Какие классы подходят |
-|----------|----------------|----------------------|
-| `Displayable` | `display() -> str` | Product, Perfume, Skincare, Makeup |
-| `Scorable` | `score() -> float` | Product, Perfume, Skincare, Makeup |
+- `T` — базовый тип без ограничений
+- `D` — ограничен протоколом `Displayable` (только объекты с методом `display()`)
+- `S` — ограничен протоколом `Scorable` (только объекты с методом `score()`)
+- `R` — для результатов map (может отличаться от исходного типа)
+
+**Protocol**
+
+Протоколы реализуют структурную типизацию — классу не нужно наследоваться, достаточно иметь нужные методы.
+
+- `Displayable` — требует метод `display() -> str`
+- `Scorable` — требует метод `score() -> float`
 
 **Важно:** Классы не наследуются от этих протоколов. Протокол проверяет только наличие методов.
 
