@@ -20,3 +20,7 @@
 > ## Лабораторная номер 5
 
 - [README](src/lab05/README.md) 
+
+> ## Лабораторная номер 6
+
+- [README](src/lab06/README.md) 
