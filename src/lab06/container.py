@@ -2,22 +2,16 @@ from typing import TypeVar, Generic, Callable, Optional, Protocol
 from lab03.base import Product
 from lab03.models import Perfume, Skincare, Makeup
 
-
-# ========== PROTOCOL ДЛЯ ОЦЕНКИ 5 ==========
-
 class Displayable(Protocol):
     def display(self) -> str:
         """должен возвращать строку с информацией о товаре"""
-        ...
+        pass
 
 
 class Scorable(Protocol):
     def score(self) -> float:
         """должен возвращать число (цена, рейтинг и т.д.)"""
-        ...
-
-
-# ========== TYPEVAR ДЛЯ GENERIC КОЛЛЕКЦИИ ==========
+        pass
 
 T = TypeVar('T')
 D = TypeVar('D', bound=Displayable)
@@ -25,10 +19,8 @@ S = TypeVar('S', bound=Scorable)
 R = TypeVar('R')
 
 
-# ========== GENERIC КОЛЛЕКЦИЯ ==========
-
 class TypedCollection(Generic[T]):
-    """Обобщённая коллекция, которая хранит элементы одного типа"""
+    """обобщённая коллекция, ктр хранит элементы одного типа"""
     
     def __init__(self) -> None:
         self._items: list[T] = []
@@ -58,8 +50,7 @@ class TypedCollection(Generic[T]):
     def __getitem__(self, index: int) -> T:
         return self._items[index]
     
-    # ========== НОВЫЕ МЕТОДЫ ДЛЯ ОЦЕНКИ 4 ==========
-    
+
     def find(self, predicate: Callable[[T], bool]) -> Optional[T]:
         for item in self._items:
             if predicate(item):
@@ -73,10 +64,8 @@ class TypedCollection(Generic[T]):
         return [transform(item) for item in self._items]
 
 
-# ========== ДОБАВЛЯЕМ МЕТОДЫ DISPLAY И SCORE В КЛАССЫ (для Protocol) ==========
-
 def add_protocol_methods():
-    """Добавляем методы в существующие классы для поддержки Protocol"""
+    """добавляем методы в существующие классы для поддержки Protocol"""
     
     # Для Product
     if not hasattr(Product, 'display'):
@@ -85,7 +74,7 @@ def add_protocol_methods():
                 price = self.calculate_price()
                 return f"{self.name}: {price} {self.currency} (в наличии: {self.stock})"
             except ValueError:
-                return f"{self.name}: НЕ ДОСТУПЕН"
+                return f"{self.name}: недоступен"
         Product.display = product_display
     
     if not hasattr(Product, 'score'):

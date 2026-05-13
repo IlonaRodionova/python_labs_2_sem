@@ -51,7 +51,6 @@ def main():
     
 
     print("\n3. PROTOCOL И STRUCTURAL TYPING")
-    
     print("\n  Сценарий 1: TypedCollection с ограничением Displayable")
     
     displayable_collection = TypedCollection[Displayable]()
