@@ -1,0 +1,13 @@
+[
+  {
+    "type": "Perfume",
+    "name": "Tom Ford Lost Cherry",
+    "price": 28900.0,
+    "stock": 3,
+    "discount": 10,
+    "category": "Парфюмерия",
+    "product_id": "TF001",
+    "volume": 50,
+    "fragrance_type": "вишневый"
+  }
+]

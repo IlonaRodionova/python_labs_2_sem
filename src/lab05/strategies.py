@@ -51,6 +51,9 @@ def make_stock_filter(min_stock: int) -> Callable[[Product], bool]:
     return stock_filter
 
 
+def is_makeup(item: Product) -> bool:
+    return isinstance(item, Makeup)
+
 class DiscountStrategy:
     def __init__(self, percent: float):
         self._percent = percent
