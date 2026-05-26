@@ -193,7 +193,7 @@ def remove_product_interactive(app: ProductApp) -> None:
         print_product(product)
         
         if get_yes_no(f"\nУдалить '{product.name}'?"):
-            app.remove_product(product_id, confirm=True)
+            app.remove_product(product_id)
             print("Товар удалён")
         else:
             print("Удаление отменено")
