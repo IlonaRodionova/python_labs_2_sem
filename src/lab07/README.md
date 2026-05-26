@@ -51,5 +51,6 @@ storage.py    - сохранение/загрузка данных
 ![alt text](../../images/lab07/2_7.png)
 ### Сценарий 3: Фильтрация 
 ![alt text](../../images/lab07/3_7.png)
-
+### Видео
+https://asciinema.org/a/Bx65vfh8pJ1SrIiA
 
