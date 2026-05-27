@@ -54,4 +54,5 @@ storage.py    - сохранение/загрузка данных
 ![alt text](../../images/lab07/3_7.png)
 
 ### Видео
+![alt text](../demo.gif)
 https://asciinema.org/a/Bx65vfh8pJ1SrIiA
